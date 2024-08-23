@@ -1,0 +1,19 @@
+%Import trial data from XSens output
+
+filename = 'Trial Session1_Sanders_LowerBody-003.xlsx';
+
+[sheets] = sheetnames(filename);
+
+data = [];
+
+for i = 1:numel(sheets)
+    if (i == 1)
+        [data_curr,headers] = readtable(filename,'Sheet',sheets(i));
+    else
+        data_curr = xlsread(filename,i);
+    end
+
+    data = {data; data_curr};
+end
+
+data = array2table(data,'VariableNames',headers);

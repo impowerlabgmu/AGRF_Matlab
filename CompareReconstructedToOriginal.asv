@@ -1,0 +1,28 @@
+
+
+
+hold on
+
+[r2,c2] = size(Cell_plot);
+
+for i = 1:r2
+
+    plot(Cell_plot{i,1}, 'r')
+    %cellfun(@plot, Cell_plot{r2,1}, 'r')
+end
+hold off
+
+
+
+figure
+hold on
+
+
+for i = 1:r2
+
+    plot(Cell_plot{i,2}, 'b')
+    %cellfun(@plot, Cell_plot{r2,2}, 'b')
+
+end
+
+hold off
